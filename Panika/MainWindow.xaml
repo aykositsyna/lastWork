@@ -1,0 +1,43 @@
+﻿<Window x:Class="Panika.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Panika" ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="387" Width="735">
+    <Canvas Height="NaN">
+        <GroupBox Header="Disciplines" Height="278" Width="360" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2,2,2,2">
+        <Canvas>
+                <ListView Height="255" Width="348" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Subjects}"  SelectedItem="{Binding SelectedSubject}" >
+                   
+                </ListView>
+            </Canvas>
+        </GroupBox>
+        <GroupBox Header="Filter" Height="164" Width="346" Canvas.Left="375" Canvas.Top="10" BorderThickness="2,2,2,2" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Canvas>
+                <RadioButton Name="RBAll" Checked="RButton_Checked" Content="All" HorizontalAlignment="Left" Height="24" Canvas.Left="10" Canvas.Top="16" VerticalAlignment="Center" Width="147"/>
+                <RadioButton Name="RBPassed" Checked="RButton_Checked" Content="Successfully passed" Height="24" Canvas.Left="10" Canvas.Top="40" Width="147" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <RadioButton Name="RBNotPassed" Checked="RButton_Checked" Content="Not passed" Height="24" Canvas.Left="10" Canvas.Top="64" Width="147" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button Content="Save" Canvas.Left="10" Canvas.Top="93" Height="33" Width="120" Click="BtnSave_Click"/>
+                <Button Content="Show" Canvas.Left="151" Canvas.Top="93" Height="33" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Click="BtnShow_Click"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox Header="Add discipline" Height="163" Width="345" Canvas.Left="375" Canvas.Top="181" BorderThickness="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Canvas>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Discipline" Height="15" Canvas.Left="10" Width="99" Canvas.Top="10" VerticalAlignment="Center"/>
+                <ComboBox Name="CBStatus" Canvas.Left="98" Canvas.Top="46" Width="161" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBlock Text="true" />
+                    <TextBlock Text="false" />
+                </ComboBox>
+                <TextBox Name="TBDiscip" Canvas.Left="98" TextWrapping="NoWrap" Text="" Canvas.Top="10" Width="161" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="Status" Height="15" Canvas.Left="10" Width="99" Canvas.Top="52" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button Content="Add" Canvas.Left="204" Canvas.Top="95" Height="30" Width="101" Click="BtnAdd_Click"/>
+            </Canvas>
+
+        </GroupBox>
+        <Button Content="Change status" Canvas.Left="23" Canvas.Top="311" Height="33" Width="151" HorizontalAlignment="Center" VerticalAlignment="Top" Click="BtnChangeStat_Click"/>
+        <Button Content="Delete" Canvas.Left="190" Canvas.Top="311" Height="33" Width="151" HorizontalAlignment="Center" VerticalAlignment="Top" Click="BtnDel_Click"/>
+
+    </Canvas>
+</Window>
